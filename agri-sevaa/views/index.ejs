@@ -1,0 +1,115 @@
+<html ng-app="TestApp">
+    <head>
+        <title>The Mean Stack developer</title>
+        <link href="\stylesheets\bootstrap.min.css" rel="stylesheet"/>
+        <link href="/stylesheets/custom.css" rel="stylesheet"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js">
+        </script>
+        <script src="/jquery/jquery-3.4.1.min.js"></script>
+    </head>
+<body >welcome to mean stack developer<br></br>
+    <p>Hello {{user}}</p>
+    <input type="text" name="" ng-model="user">
+<br/><br/>
+<div ng-init="name = 'Ranjan'">{{name}}
+    <p ng-bind="name"></p>
+</div>
+
+click for jaado<input type="checkbox" ng-model="isChecked">
+<p ng-if="isChecked"> if condition true </p>
+<p ng-show="isChecked"> if condition true </p>
+<br/><br/>
+
+<div ng-init="myDate = 354354321">
+    <p>{{myDate|date:'medium'}}</p>
+</div>
+
+<div ng-init="arr = [1,2,3,4,5,6,7]">
+<p>{{arr| limitTo:-5}}</p>
+</div>
+<div ng-init="myDate1 = 354354321">
+    <p>{{myDate1|date:'yyyy-mm-dd h:m:s'}}</p>
+</div>
+<div ng-init="num1 = 6">
+    <input type="text" ng-model="sixer">
+    <p ng-hide="sixer != num1">sixer  </p>
+    <p ng-show="sixer != num1"> male or female</p>
+</div>
+
+<div ng-init="num = 6">
+    <input type="text" ng-model="guess" ng-class="{red: guess!=num, green: guess == num}">
+</div>
+<br>
+<div ng-init="rebels = [
+{name:'ranjan', surname:'yadav', age:25},
+{name:'rashuk', surname:'yadav', age:22},
+{name:'asdsafs', surname:'yadav', age:235},
+{name:'dasdas', surname:'yadav', age:254},
+{name:'dasdas', surname:'yadav', age:255},
+];">
+<select name="" id="" ng-model = "rebel" ng-options="rebel.name group by rebel.age for rebel in rebels| orderBy: '-name'"></select>
+<p> you selected {{rebel.name| uppercase}}</p>
+</div>
+<br><br>
+<div ng-init="rebellion = [
+{name:'ranjan', surname:'yadav', age:25},
+{name:'rashuk', surname:'yadav', age:22},
+{name:'asdsafs', surname:'yadav', age:235},
+{name:'dasdas', surname:'yadav', age:254},
+{name:'dasdas', surname:'yadav', age:255},
+];">
+search<input type="text" ng-model="search.$">
+<ul>
+<li ng-repeat="rebel1 in rebellion| filter: search">{{rebel1.name | uppercase}}</li>
+</ul>
+</div>
+
+    <div ng-init="number = 0">
+        <button ng-click="number=number+1">+1</button>
+        <button ng-click = "number=number-1">-1</button>
+        <p>{{number}}</p>
+    </div>
+
+<div ng-init="nums = [0,1]">
+    <ul>
+        <li ng-repeat="numv in nums" ng-class="{red1: $even, green1: $odd}">{{numv | currency:"Rs"}}</li>
+    </ul>
+</div>
+<div ng-init="numl = [0.004545,1.22332223]">
+    <ul>
+        <li ng-repeat="num3 in numl" ng-class="{red1: $even, green1: $odd}">{{num3 | number:8 }}</li>
+    </ul>
+</div>
+    
+<div ng-init="numsq = ['ranjan','rahul','ranjan']">
+    <ul>
+        <li ng-repeat="numi in numsq track by $index ">{{numi}}</li>
+    </ul>
+</div>
+<div ng-controller="SecondController as SC">
+<div ng-controller="MainController as VM">
+    Hello Mr.{{VM.name}}
+    {{SC.name}}
+    <br>
+    <button ng-click="inc()">+1</button>
+    <button ng-click="dec(2)">-2</button>
+   <p> {{cal}}</p> 
+    <ul>
+        <li ng-repeat="var in VM.people">
+        <h4>    {{var.name}} </h4>
+        <h4>    {{var.lastName}}</h4>
+        <p>{{nameScope}}</p>
+        </li>
+    </ul>
+
+
+</div>
+</div>
+<br><br><br>
+    <script src="/javascripts/app.js"></script>
+    <footer class="footer">
+        <li class="socialMedias"> <img class="facebook" src="images/corn-footer.png" href="https://www.facebook.com/axel.halldin1?fref=ts"/>
+        </li>
+        </footer>
+</body>
+</html>

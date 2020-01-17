@@ -1,0 +1,21 @@
+.footer{
+    width:100%;
+    height:100px;
+    z-index:100;
+    bottom: 0px;
+    top: -108px;
+    position: relative;
+    
+    }
+.red{
+    border-color: red;
+}
+.green{
+    border-color: green;
+}
+.red1{
+    color: red;
+}
+.green1{
+    color: green;
+}
